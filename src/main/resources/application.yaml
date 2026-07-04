@@ -2,17 +2,22 @@ spring:
   application:
     name: parking-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/parking_db
-    username: parking_user
-    password: parking_password
+    url: jdbc:postgresql://localhost:5432/exam2
+    username: exam2
+    password: exam2
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    defer-datasource-initialization: true
     properties:
       hibernate:
         format_sql: true
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
   security:
     oauth2:
       resourceserver:
